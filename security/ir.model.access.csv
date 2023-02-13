@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_index_days_count_index_days_count,index_days_count.index_days_count,model_index_days_count_index_days_count,base.group_user,1,1,1,1

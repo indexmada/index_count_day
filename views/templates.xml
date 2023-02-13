@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th name="th_days_count" class="text-right">Nbr de jours</th>
+            <th name="th_temp_qty" class="text-right">Quantité</th>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="after">
+            <td name="td_days_count" class="text-right">
+                <span t-field="line.days_count" />
+            </td>
+            <td name="td_temp_qty" class="text-right">
+                <span t-field="line.temp_quantity" />
+            </td>
+        </xpath>
+        <xpath expr="//th[@name='th_quantity']" position="replace"/>
+        <xpath expr="////td[@name='td_quantity']" position="replace"/>
+    </template>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//th[@name='th_source']" position="after">
+            <th name="th_days_count" class="text-right"><span>Nbr de jours</span></th>
+            <th name="th_temp_qty" class="text-right"><span>Quantité</span></th>
+        </xpath>
+        <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+            <td name="td_days_count" class="text-right">
+                <span t-field="line.days_count" />
+            </td>
+            <td name="td_temp_qty" class="text-right">
+                <span t-field="line.temp_quantity" />
+            </td>
+        </xpath>
+        <xpath expr="//th[@name='th_quantity']" position="replace"/>
+        <xpath expr="//t[@t-foreach='lines']/tr/t/td[4]" position="replace"/>
+    </template>
+    </data>
+</odoo>
