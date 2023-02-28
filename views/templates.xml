@@ -15,6 +15,10 @@
         </xpath>
         <xpath expr="//th[@name='th_quantity']" position="replace"/>
         <xpath expr="////td[@name='td_quantity']" position="replace"/>
+
+        <!-- Remove taxes column -->
+        <xpath expr="//th[@name='th_taxes']" position="replace"/>
+        <xpath expr="//td[@name='td_taxes']" position="replace"/>
     </template>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//th[@name='th_source']" position="after">
@@ -31,6 +35,10 @@
         </xpath>
         <xpath expr="//th[@name='th_quantity']" position="replace"/>
         <xpath expr="//t[@t-foreach='lines']/tr/t/td[4]" position="replace"/>
+
+        <!-- Remove taxes column -->
+        <xpath expr="//th[@name='th_taxes']" position="replace"/>
+        <xpath expr="//t[@t-foreach='lines']/tr/t/td[6]" position="replace"/>
     </template>
     </data>
 </odoo>
